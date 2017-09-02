@@ -1,5 +1,6 @@
 # LogFileAnalysis
 Activity 1:
+============
 
 In this activity, the P3A1_Yellajosyula_ryellajo class is created to support various functions for processing the user provided log file.Some of them are as below:
 •	Total number of  files are in the logging data :
