@@ -46,9 +46,12 @@ Activity 2:
 ===========
 In this activity, P3A2_Yellajosyula_ryellajo class uses OpenCSV library and the CSVWriter class to output below list of values to a CSV file named Details.csv in corresponding columns.
 
-First column:The  name of every file changed
+First column: The  name of every file changed
+
 Second column: Total number of commits don’t to this file
+
 Third column: Earliest or first commit done to this file
+
 Fourth column: Last date of commit to this file.
 
 P3A1_Yellajosyula_ryellajo  class and its methods are called using its class instance in achieving above results.Concepts of String processing,Selection Sort,Date comparisions,HashMaps and Lists are used in achieving the desired output.
