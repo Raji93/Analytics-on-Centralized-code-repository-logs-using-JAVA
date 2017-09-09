@@ -1,5 +1,4 @@
 # LogFileAnalysis
-=================
 This project mainly focuses on analysing Log file data of a centralised repository in an organisation using JAVA.It looks for trends in the log data  and user commits  which is achieved through following activities.
 
 Activity 1:
