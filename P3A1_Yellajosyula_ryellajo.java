@@ -26,20 +26,21 @@ public class P3A1_Yellajosyula_ryellajo
 			fileName = f;
 			
 	}
-  //Accessor method for file name
-  public String getFileNames()
-  {
-    return fileName;
-  }
-  //Mutator method for file Name
-  public void setFileName(String s)
-  {
-    fileName = s;
-  }
-  //Method that gets the total number of files in the log -Accessor for fileCount
+	//Accessor method for file name
+	public String getFileNames()
+	  {
+	    return fileName;
+	  }
+	  //Mutator method for file Name
+	public void setFileName(String s)
+	  {
+	    fileName = s;
+	  }
+ 	
+	//Method that gets the total number of files in the log -Accessor for fileCount
 	public int getFileCount() throws FileNotFoundException,IOException
 	{
-			BufferedReader br = new BufferedReader(new FileReader(fileName));
+		BufferedReader br = new BufferedReader(new FileReader(fileName));
     		String line;
 
     				while ((line = br.readLine()) != null) 
@@ -47,28 +48,28 @@ public class P3A1_Yellajosyula_ryellajo
     						if(line.contains("RCS file:"))		
     							filecount++;
    					}
-   		 	return filecount;
+   		return filecount;
 		
 	}
 
-  //Mutator method for file count
-  public void setFileCount(int n)
-  {
-    filecount = n;
-  }
+	//Mutator method for file count
+	public void setFileCount(int n)
+	{
+	    filecount = n;
+	}
 
-//Method that fetches the maximum revisions of each file
-  public Map<String,Integer> getMaxRevisions() throws FileNotFoundException,IOException
+	//Method that fetches the maximum revisions of each file
+	public Map<String,Integer> getMaxRevisions() throws FileNotFoundException,IOException
 	{
 			Map<String,Integer> fileContents = new HashMap<>();
 			BufferedReader br = new BufferedReader(new FileReader(fileName));
-    		String line,file = new String();
-    		int revisions = 0;
+    			String line,file = new String();
+    			int revisions = 0;
 
     				while ((line = br.readLine()) != null) 
     				{
      					
-						if(line.contains("RCS file:"))
+					if(line.contains("RCS file:"))
     					{
     						
     						 String lines[] = line.split(":");
@@ -79,20 +80,20 @@ public class P3A1_Yellajosyula_ryellajo
     					if(line.contains("total revisions:"))	
     					{
     							
-    							//Splits the string in to parts to fetch the revisions number
-    							String parts[] = line.split(";");
+    						//Splits the string in to parts to fetch the revisions number
+    						String parts[] = line.split(";");
     					
-    							//Replaces spaces before number with zero to make it easy to convert into integer
-    							String temp1 = parts[0].replace(" ", "0");
+    						//Replaces spaces before number with zero to make it easy to convert into integer
+    						String temp1 = parts[0].replace(" ", "0");
     					
-    							//Fetches the integer value of revisions string
-    							String temp = temp1.substring(temp1.indexOf("total revisions:")+17 , temp1.length());
+    						//Fetches the integer value of revisions string
+    						String temp = temp1.substring(temp1.indexOf("total revisions:")+17 , temp1.length());
 
-    							//Assigns it to revisions value
-    							if(revisions<Integer.parseInt(temp))
-    								{
-    									revisions = Integer.parseInt(temp);
-    								}
+    						//Assigns it to revisions value
+    						if(revisions<Integer.parseInt(temp))
+    						{
+    							revisions = Integer.parseInt(temp);
+    						}
     								
     					}
 
@@ -166,8 +167,8 @@ public class P3A1_Yellajosyula_ryellajo
 //Method that fetches the user who made maximum commits and the count
 	public Map<String,Integer> MaxUserCommits() throws FileNotFoundException,IOException
 	{
-			Map<String,Integer> fileContents = new HashMap<>();
-			BufferedReader br = new BufferedReader(new FileReader(fileName));
+		Map<String,Integer> fileContents = new HashMap<>();
+		BufferedReader br = new BufferedReader(new FileReader(fileName));
     		String line,userName = "",file = new String();
     		int commits = 0;
     		String maxFile = new String();
@@ -331,8 +332,8 @@ public  Map<String,Integer> userMostCommits(String file) throws IOException,File
 //Method that returns the earliest commits of files in the log
 public Map<String,Date> earliestCommits() throws FileNotFoundException,IOException,ParseException
 	{
-			Map<String,Date> fileContents = new HashMap<>();
-			BufferedReader br = new BufferedReader(new FileReader(fileName));
+		Map<String,Date> fileContents = new HashMap<>();
+		BufferedReader br = new BufferedReader(new FileReader(fileName));
     		String line,userName = "",file = new String();
     		int commits = 0;
     		String maxFile = new String();
@@ -389,8 +390,8 @@ public Map<String,Date> earliestCommits() throws FileNotFoundException,IOExcepti
 //Method that finds the last commits made to files
 public Map<String,Date> LastCommits() throws FileNotFoundException,IOException,ParseException
 	{
-			  Map<String,Date> fileContents = new HashMap<>();
-			  BufferedReader br = new BufferedReader(new FileReader(fileName));
+		Map<String,Date> fileContents = new HashMap<>();
+		BufferedReader br = new BufferedReader(new FileReader(fileName));
     		String line,userName = "",file = new String();
     		int commits = 0;
     		String maxFile = new String();
@@ -515,17 +516,17 @@ public Map<String,Date> LastCommits() throws FileNotFoundException,IOException,P
 	{
 		String file = new String();
 		Scanner in = new Scanner(System.in);
-    boolean flag = false;
+   		boolean flag = false;
     
 
     while(!flag)
     {  
 		 
-			System.out.println("Enter the log file name");
-			file = in.nextLine();
+		System.out.println("Enter the log file name");
+		file = in.nextLine();
 
-      if(file.contains(".log"))     
-          flag = true;
+     		 if(file.contains(".log"))     
+         	 flag = true;
 			   
      }
  
@@ -542,13 +543,13 @@ public Map<String,Date> LastCommits() throws FileNotFoundException,IOException,P
 					//Creates an object of P3A1_Yellajosyula_ryellajo class  
 					P3A1_Yellajosyula_ryellajo x = new P3A1_Yellajosyula_ryellajo(getFileName());	
 
-          //Hash Maps to hold th results
+         				 //Hash Maps to hold th results
 					Map<String,Integer> result,result1,result2;
 					Map<String,Date> result3;
 
 					System.out.println("Total number of files in the log :\t "+x.getFileCount());
 					
-				  result = x.getMaxRevisions();
+				 	 result = x.getMaxRevisions();
 
 				 	for(Map.Entry<String,Integer> m:result.entrySet())
 				 	{  
@@ -557,7 +558,7 @@ public Map<String,Date> LastCommits() throws FileNotFoundException,IOException,P
   					}  
 
 
-				  result1 = x.getMaxUserCommits();
+				 	 result1 = x.getMaxUserCommits();
 
 				 	for(Map.Entry<String,Integer> m:result1.entrySet())
 				 	{  
@@ -565,7 +566,7 @@ public Map<String,Date> LastCommits() throws FileNotFoundException,IOException,P
   					 System.out.println("Number of user commits: "+m.getValue());  
   				}  
 
-  				result2 = x.MaxUserCommits();
+  					result2 = x.MaxUserCommits();
 
 				 	for(Map.Entry<String,Integer> m:result2.entrySet())
 				 	{  
@@ -573,17 +574,18 @@ public Map<String,Date> LastCommits() throws FileNotFoundException,IOException,P
   					 System.out.println("Number of commits done by this user: "+m.getValue());  
   					}  
 
-  				result3 =x.earliestCommits();
+  					result3 =x.earliestCommits();
 
 				 	for(Map.Entry<String,Date> m:result3.entrySet())
 				 	{  
-              System.out.println("File:"+m.getKey()+"\nEarliest commit date: "+m.getValue());  
-  				    Map<String,Integer> Fresults = x.userMostCommits(m.getKey());
-                for(Map.Entry<String,Integer> f:Fresults.entrySet())
-                {
-                  System.out.println("User(s) with most commits for this file is"+f.getKey());
-                  System.out.println("Total commits\t"+f.getValue()+"\n"); 
-                } 
+            			    	
+					System.out.println("File:"+m.getKey()+"\nEarliest commit date: "+m.getValue());  
+  				    	Map<String,Integer> Fresults = x.userMostCommits(m.getKey());
+					for(Map.Entry<String,Integer> f:Fresults.entrySet())
+					{
+					  System.out.println("User(s) with most commits for this file is"+f.getKey());
+					  System.out.println("Total commits\t"+f.getValue()+"\n"); 
+					} 
              
           }  
 
